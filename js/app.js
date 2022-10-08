@@ -1,4 +1,4 @@
-const items = document.querySelectorAll(".countdown-item > h4");
+const headerList = document.querySelectorAll(".countdown-item > h4");
 const countdownElement = document.querySelector("countdown");
 //Назначаем дату отчета 
 let countdownDate = new Date( 2022, 11, 18, 10, 0, 0).getTime();
@@ -23,17 +23,17 @@ function getCountdownTime() {
 
     //Подсчет дней, часов, минут и секунд
     let days =  Math.floor(distance / oneDay);
-    let hours = Math.floor(distance % oneDay) / oneHour;
-    let minutes = Math.floor(distance % oneHour) / oneMinute;
-    let seconds = Math.floor(distance % oneMinute) / 1000;
+    let hours = Math.floor((distance % oneDay) / oneHour);
+    let minutes = Math.floor((distance % oneHour) / oneMinute);
+    let seconds = Math.floor((distance % oneMinute) / 1000);
 
     //Создаем массив с переменными
     const values = [days, hours, minutes, seconds];
      console.log(values);
      
     //Добавляем значение переменных на страницу 
-    items.forEach(function(item, index) {
-        item.textContent = (values [index]);
+    headerList.forEach((header, index,) => {
+        header.textContent = (values [index]);
     });
     if(distance < 0) {
         clearInterval(countdown);
@@ -44,4 +44,4 @@ function getCountdownTime() {
 
 let countdown = setInterval(getCountdownTime, 1000);
 
-getCountdownTime();
+

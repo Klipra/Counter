@@ -53,5 +53,5 @@ body{
 
 @font-face{
     font-family: 'font1';
-    src: url(../fonts/Roboto-Bold.ttf);
+    src: url('../fonts/Roboto-Bold.ttf');
 }
